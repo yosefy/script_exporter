@@ -49,6 +49,7 @@ func runScript(script *Script) error {
 	defer cancel()
 
 	bashCmd := exec.CommandContext(ctx, *shell)
+	bashOut, err := bashCmd.Output()
 
 	bashIn, err := bashCmd.StdinPipe()
 
